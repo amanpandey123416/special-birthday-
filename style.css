@@ -1,0 +1,77 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+html,body{width:100%;height:100%;background:#000;color:#fff;overflow-y:auto;scroll-behavior:smooth;}
+#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;}
+
+.section{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+  text-align:center;
+  padding:20px;
+}
+
+.intro h1{font-size:4rem;color:#ff66b2;text-shadow:0 0 25px #ff99cc;}
+.intro p{font-size:1.5rem;margin-top:1rem;}
+
+.middle h2{font-size:2.5rem;color:#ffd6eb;margin-bottom:1rem;text-shadow:0 0 20px #ff99cc;}
+.timer{font-size:1.6rem;text-shadow:0 0 12px #ff99cc;}
+.love-msg{margin-top:1rem;font-size:1.2rem;color:#ffe6f3;animation:glow 3s ease-in-out infinite;}
+
+@keyframes glow{
+  0%,100%{text-shadow:0 0 15px #ff99cc,0 0 25px #ff99cc;}
+  50%{text-shadow:0 0 25px #ff3399,0 0 45px #ff3399;}
+}
+
+/* 💌 Letter */
+.letter{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.envelope{
+  font-size:8rem;
+  cursor:pointer;
+  animation:floaty 3s ease-in-out infinite;
+  transition:transform .3s;
+}
+.envelope:hover{transform:scale(1.1);}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+
+/* Big letter popup */
+.big-letter{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  z-index:30;
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn 0.5s ease;
+}
+.note-content{
+  background:#fff;
+  color:#ff3399;
+  padding:40px 50px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 0 50px rgba(255,102,178,.8);
+  font-size:1.5rem;
+  width:80%;
+  max-width:600px;
+  animation:pop 0.6s ease;
+}
+.note-content h2{margin-bottom:1rem;font-size:2rem;}
+.note-content button{
+  margin-top:2rem;
+  background:#ff66b2;
+  border:none;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:1.2rem;
+}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes pop{from{transform:scale(.7);opacity:0;}to{transform:scale(1);opacity:1;}}
